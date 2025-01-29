@@ -1,0 +1,16 @@
+1 | bouncy-scholarship-listened-noisily | team2 | [5 7 5 5 5 5] | 528 | 0.8051350246403632
+2 | wordless-frenchman-complete-correctly-prhi | team31 | [5 6 5 5 5 5] | 514 | 0.7161438279662862
+2 | entertained-enlightenment-attach-viciously-prhi | team33 | [5 6 5 5 5 5] | 514 | 0.7161438279662862
+4 | funded-outset-possessed-repeatedly-prhi | team5 | [5 5 5 5 5 5] | 500 | 0.6346629021582083
+4 | grande-colors-flapped-defiantly-prhi | team 6 | [5 5 5 5 5 5] | 500 | 0.6346629021582083
+4 | standing-pointer-shock-unfortunately-prhi | team8 | [5 5 5 5 5 5] | 500 | 0.6346629021582083
+4 | blah-ascent-signed-separately-prhi | team9 | [5 5 5 5 5 5] | 500 | 0.6346629021582083
+4 | harmonious-petunia-melted-violently-prhi | team10 | [5 5 5 5 5 5] | 500 | 0.6346629021582083
+4 | synthetic-abundance-march-highly | team12 | [5 5 5 5 5 5] | 500 | 0.6346629021582083
+4 | indebted-mowing-settle-gleefully | team23 | [5 5 5 5 5 5] | 500 | 0.6346629021582083
+4 | special-fragmentation-grabbed-yieldingly | team46 | [5 5 5 5 5 5] | 500 | 0.6346629021582083
+12 | deluded-ocelot-tricked-boastfully | team4 | [5 9 0 5 5 5] | 486 | 0.5847076179206241
+13 | guilty-dromedary-decided-tremendously-prhi | team11 | [5 3 5 5 5 5] | 472 | 0.5009881461519083
+14 | dismal-workman-refuse-bitterly | team3 | [5 2 5 5 5 5] | 458 | 0.45181351898474004
+15 | fine-ferret-pop-boldly | team1 | [5 6 0 5 5 5] | 444 | 0.43762159158324737
+16 | ferocious-assignment-pumped-vivaciously-prhi | team7 | [5 1 5 5 5 5] | 444 | 0.415292382079376
