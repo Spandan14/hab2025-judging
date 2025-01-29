@@ -23,7 +23,10 @@ HEADER = "Team ID"
 team_ids = [HEADER]
 for team_info in team_names[1:]:
     team_id = hruid.generate()
-    team_id = team_id if 'Patient' not in team_info[1] else f'{team_id}-prhi'
+    if 'Patient' in team_info[1]:
+        team_id = f'{team_id}-prhi'
+    if 'Yes' in team_info[2]:
+        team_id = f'{team_id}-first'
     team_ids += [team_id]
 
 

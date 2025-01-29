@@ -1,6 +1,6 @@
-Room Assignments (2025-01-29 12:13:27.927296)
+Room Assignments (2025-01-29 16:11:26.847663)
 
-Room, Judges, Rep
+Room | Judges | Rep
 Salomon 003 | Ranadeep Singh, Tom Sgouros, Raakesh Premkumar | Ashton
 Salomon 004 | David Paulius, Dafne Zorzetto | Hannah
 Salomon 202 | Gayathri Garimella, Adam Blumenthal | Michael

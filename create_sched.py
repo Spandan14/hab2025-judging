@@ -126,6 +126,7 @@ status = solver.Solve(model)
 
 # prepare output
 schedule = []
+id_schedule = []
 if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
     prhi_teams_slots = {}
 
@@ -134,24 +135,27 @@ if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
             for judge in range(num_judges - 1):
                 if solver.Value(assignments[(team, slot, judge)]):  # If assigned
                     team_id = team_ids[team]
+                    team_name = team_names[team]
                     slot_time = judging_start + slot * slot_delta
                     slot_time = slot_time.strftime("%H:%M")
                     judge_name = room_info[judge][1]
 
-                    schedule.append((team_names[team], slot_time, judge_name))
+                    schedule.append((team_name, slot_time, judge_name))
+                    id_schedule.append((team_id, slot_time, judge_name))
                     
                     # check if the slot belongs to a prhi team
                     if team_id in prhi_team_ids:
-                        if team_names[team] not in prhi_teams_slots:
-                            prhi_teams_slots[team_names[team]] = []
-                        prhi_teams_slots[team_names[team]].append(f"{slot_time} ({judge_name})")
+                        if (team_name, team_id) not in prhi_teams_slots:
+                            prhi_teams_slots[(team_name, team_id)] = []
+                        prhi_teams_slots[(team_name, team_id)].append(f"{slot_time} ({judge_name})")
     
     with open("prhi_judging_info.txt", "w") as f:
         f.write(f"PRHI Judging Schedule ({datetime.datetime.now()})\n\n")
         f.write(f"In room {prhi_room_name}, from {prhi_start.strftime('%H:%M')} to {prhi_end.strftime('%H:%M')}.\n")
         f.write("PRHI Teams, H@B Slot 1, H@B Slot 2,\n")
         for team, slots in prhi_teams_slots.items():
-            f.write(f"{team}, {slots[0]}, {slots[1]}\n")
+            team_name, team_id = team
+            f.write(f"{team_name}, {team_id}, {slots[0]}, {slots[1]}\n")
     
     with open("room_assignments.txt", "w") as f:
         f.write(f"Room Assignments ({datetime.datetime.now()})\n\n")
@@ -166,5 +170,8 @@ else:
 
 df = pd.DataFrame(schedule, columns=["Team", "Slot", "Judge"])
 pivot_df = df.pivot(index="Slot", columns="Judge", values="Team")
+pivot_df.to_excel("team_schedule.xlsx")
 
-pivot_df.to_excel("output.xlsx")  
+df = pd.DataFrame(id_schedule, columns=["Team ID", "Slot", "Judge"])
+pivot_df = df.pivot(index="Slot", columns="Judge", values="Team ID")
+pivot_df.to_excel("id_schedule.xlsx")
