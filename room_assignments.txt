@@ -1,11 +1,8 @@
-Room Assignments (2025-01-29 16:11:26.847663)
+Room Assignments (2025-02-02 01:02:46.268167)
 
 Room | Judges | Rep
-Salomon 003 | Ranadeep Singh, Tom Sgouros, Raakesh Premkumar | Ashton
-Salomon 004 | David Paulius, Dafne Zorzetto | Hannah
-Salomon 202 | Gayathri Garimella, Adam Blumenthal | Michael
-Salomon 203 | John Savage, Vasilis Kemerlis | Annie
-Friedman 101 | Daniel Ritchie, Stephen Bach | John H
-Friedman 102 | Alexander Gaidis, Gabriel Taubin | Donny
-Friedman 201 | Diana Freed, Deepti Raghavan | Aarav
-Friedman 202 | Ellie Pavlick, Priyanka Pande | Kelly
+Friedman 101 | Ranadeep Singh, Tom Sgouros, Raakesh Premkumar, David Paulius | Ashton
+Friedman 108 | Dafne Zorzetto, Gayathri Garimella, Adam Blumenthal | Hannah
+Friedman 201 | John Savage, Vasilis Kemerlis, Daniel Ritchie | Michael
+Friedman 202 | Stephen Bach, Alexander Gaidis, Gabriel Taubin | Annie
+Friedman 208 | Diana Freed, Deepti Raghavan, Ellie Pavlick | John H

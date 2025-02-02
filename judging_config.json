@@ -1,16 +1,16 @@
 {
-    "team_names": "test_team_names.csv",
+    "team_names": "team_names.csv",
     "team_ids": "team_ids.csv",
     "judge_names": "judge_names.csv",
     "room_names": "room_names.csv",
     "rep_names": "hab_rep_names.csv",
     "scores_file": "scores.csv",
     "scheduling": {
-        "start_time": "12:00",
-        "slot_length": 10,
-        "slot_count": 20,
-        "prhi_window_start": "12:00",
+        "start_time": "12:10",
+        "slot_length": 7,
+        "slot_count": 18,
+        "prhi_window_start": "12:10",
         "prhi_window_end": "13:30"
     },
-    "presentation_count": 2
+    "presentation_count": 1
 }

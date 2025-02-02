@@ -22,7 +22,7 @@ team_names = team_ids["Team Name"].tolist()
 team_ids = team_ids['Team ID'].tolist()
 prhi_team_ids = [team_id for team_id in team_ids if 'prhi' in team_id] # these teams must meet the prhi judge
 
-num_judges = 9 # 8 + 1 for PRHI
+num_judges = 6 # 5 + 1 for PRHI
 judges = judges_file["Judge Name"].tolist()
 
 # prhi room needs to be separate
@@ -99,9 +99,11 @@ for team in range(num_teams):
 for slot in range(num_slots):
   for team in range(num_teams):
       if slot in prhi_judge_slots:
-          model.Add(assignments[(team, slot, prhi_judge)] == (team in prhi_team_ids))
+          model.Add(assignments[(team, slot, prhi_judge)] == (team_ids[team] in prhi_team_ids))
       else:
           model.Add(assignments[(team, slot, prhi_judge)] == 0)
+
+
 
 # Objective to equalize judging load
 # count how many teams each judge sees
@@ -136,6 +138,8 @@ if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
                 if solver.Value(assignments[(team, slot, judge)]):  # If assigned
                     team_id = team_ids[team]
                     team_name = team_names[team]
+                    if team_id in prhi_team_ids:
+                        team_name += " (PRHI)"
                     slot_time = judging_start + slot * slot_delta
                     slot_time = slot_time.strftime("%H:%M")
                     judge_name = room_info[judge][1]
@@ -155,7 +159,7 @@ if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
         f.write("PRHI Teams, H@B Slot 1, H@B Slot 2,\n")
         for team, slots in prhi_teams_slots.items():
             team_name, team_id = team
-            f.write(f"{team_name}, {team_id}, {slots[0]}, {slots[1]}\n")
+            f.write(f"{team_name}, {team_id}, {slots[0]}\n")
     
     with open("room_assignments.txt", "w") as f:
         f.write(f"Room Assignments ({datetime.datetime.now()})\n\n")
